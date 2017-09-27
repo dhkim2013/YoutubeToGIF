@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>YoutubeGIF</title>
+        <!-- ​jquery -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <!-- ​materializecss -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style media="screen">
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+            .content {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title {
+                width: 100%;
+                height: 55vh;
+                background-color: rgb(238, 110, 115);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .title h1 {
+                margin: 0;
+                color: white;
+            }
+
+            .input {
+                width: 100%;
+                height: 45vh;
+                background-color: white;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .input .url-field {
+                width: 600px;
+                height: calc(100% / 4);
+            }
+
+            .input .subclip-field {
+                width: 600px;
+                height: calc(100% / 4);
+
+                display: flex;
+                justify-content: space-between;
+            }
+            .input .subclip-field .input-field {
+                width: 280px;
+            }
+
+            .input .button-field {
+                width: 100%;
+                height: calc(100% / 4);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .input .button-field .btn,
+            .input .button-field .btn:hover {
+                background-color: rgb(238, 110, 115);
+            }
+
+            .input .result-field {
+                width: 100%;
+                height: calc(100% / 4);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .input .result-field a {
+                font-size: 24px;
+                color: rgb(238, 110, 115);
+            }
+
+            input[type=text]:not(.browser-default):focus:not([readonly]) {
+                border-bottom: 1px solid rgb(238, 110, 115);;
+                -webkit-box-shadow: 0 1px 0 0 rgb(238, 110, 115);
+                box-shadow: 0 1px 0 0 rgb(238, 110, 115);
+            }
+
+            input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+                color: rgb(238, 110, 115);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="title">
+                <!-- <h1>Youtube To GIF</h1> -->
+            </div>
+            <div class="input">
+
+                <div class="url-field">
+                    <div class="input-field">
+                        <input id="url" class="url" type="text">
+                        <label for="url">Youtube Video URL</label>
+                    </div>
+                </div>
+
+                <div class="subclip-field">
+                    <div class="input-field">
+                        <input id="start" class="start" type="text">
+                        <label for="start">Start</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="end" class="end" type="text">
+                        <label for="end">End</label>
+                    </div>
+                </div>
+
+                <div class="button-field">
+                    <a class="waves-effect waves-light btn">CONVERT</a>
+                </div>
+
+                <div class="result-field">
+                    <!-- <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <a href="#">GIF Download</a>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
