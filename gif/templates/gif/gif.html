@@ -103,7 +103,7 @@
     <body>
         <div class="content">
             <div class="title">
-                <!-- <h1>Youtube To GIF</h1> -->
+                <h1>Youtube To GIF</h1>
             </div>
             <div class="input">
 
@@ -126,11 +126,50 @@
                 </div>
 
                 <div class="button-field">
-                    <a class="waves-effect waves-light btn">CONVERT</a>
+                    <a id="convert" class="waves-effect waves-light btn">CONVERT</a>
                 </div>
 
                 <div class="result-field">
-                    <!-- <div class="preloader-wrapper active">
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $('#convert').on('click', ()=> {
+                startLoading();
+
+                var form = new FormData();
+                form.append("url", $('#url').val());
+                form.append("start", $('#start').val());
+                form.append("end", $('#end').val());
+
+                var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "/",
+                  "method": "POST",
+                  "processData": false,
+                  "contentType": false,
+                  "mimeType": "multipart/form-data",
+                  "data": form
+                }
+
+                $.ajax(settings).done(function (response) {
+                    finishLoading();
+                    $('.result-field').append(`
+                        <a href="${JSON.parse(response).url}" download>GIF Download</a>
+                    `);
+                });
+            });
+
+            function startLoading() {
+                $('.result-field').empty();
+                $('.result-field').append(`
+                    <div class="preloader-wrapper active">
                         <div class="spinner-layer spinner-red-only">
                             <div class="circle-clipper left">
                                 <div class="circle"></div>
@@ -142,12 +181,13 @@
                                 <div class="circle"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                `);
+            }
 
-                    <a href="#">GIF Download</a>
-                </div>
-
-            </div>
-        </div>
+            function finishLoading() {
+                $('.result-field').empty();
+            }
+        </script>
     </body>
 </html>

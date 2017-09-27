@@ -18,7 +18,7 @@ from YoutubeToGIF import settings
 @method_decorator(csrf_exempt, name='dispatch')
 class ConvertGIF(View):
     def get(self, request):
-        return HttpResponse(status=200)
+        return render(request, 'gif/gif.html')
 
     def post(self, request):
         videoURL = request.POST.get('url')
